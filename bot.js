@@ -2,9 +2,16 @@
 
 const irc = require('irc');
 
-var config = require('./config.json');
+var config = {
+    logAll: true,
+    autoConnect: false  // control externally
+};
 
-var client = new irc.Client(config.server, config.nick, config);
+/* Copy in user-specified configuration */
+Object.assign(config, require('./config.json'));
+
+var client = module.exports = new irc.Client(
+        config.server, config.nick, config);
 
 /*
  * from, to: strings, bare irc nickames
@@ -16,7 +23,7 @@ client.addListener('message', (from, to, text, message) => {
 });
 
 client.addListener('raw', message => {
-  if(config.logAll || true) {
+  if(config.logAll) {
     console.log(message.args.join(' '));
   }
 });
