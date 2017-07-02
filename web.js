@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-module.exports = app = express();
+const app = module.exports = express();
 
 app.use(express.static('www'));
 
