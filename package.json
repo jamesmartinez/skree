@@ -11,14 +11,14 @@
     "url": "git+https://github.com/jamesmartinez/skree.git"
   },
   "author": "James Martinez",
-  "contributors": [
-  ],
+  "contributors": [],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jamesmartinez/skree/issues"
   },
   "homepage": "https://github.com/jamesmartinez/skree#readme",
   "dependencies": {
+    "express": "^4.15.3",
     "irc": "^0.5.2"
   }
 }
