@@ -5,6 +5,11 @@ const bot = require('./bot');
 
 const userConfig = require('./config.json')
 
+var skree = {
+    web: web,
+    bot: bot
+};
+
 var webConfig = {
     port: 3000
 };
@@ -12,6 +17,11 @@ var webConfig = {
 var botConfig = {
     logAll: true
 };
+
+web.use((req, res, next) => {
+    req.skree = skree;
+    next();
+});
 
 /* copy in user-specified configuration */
 Object.assign(webConfig, userConfig.web);

@@ -2,7 +2,7 @@
 
 const irc = require('irc');
 
-function createHandlers(client, config) {
+function createHandlers(client, config, skree) {
     /*
      * from, to: strings, bare irc nickames
      * text: string, the text of the message only
@@ -20,9 +20,14 @@ function createHandlers(client, config) {
 }
 
 var bot = module.exports = {
-    getClient: config => {
+
+    /*
+     * config is an object to be passed to the irc library
+     * skree is a namespace to share dependencies
+     */
+    getClient: (config, skree) => {
         var client = new irc.Client(config.server, config.nick, config);
-        createHandlers(client, config);
+        createHandlers(client, config, skree);
         return client;
     }
 };
