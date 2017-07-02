@@ -1,0 +1,24 @@
+{
+  "name": "skree",
+  "version": "1.0.0",
+  "description": "Fun IRC bot that comes with a web interface",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesmartinez/skree.git"
+  },
+  "author": "James Martinez",
+  "contributors": [
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesmartinez/skree/issues"
+  },
+  "homepage": "https://github.com/jamesmartinez/skree#readme",
+  "dependencies": {
+    "irc": "^0.5.2"
+  }
+}
